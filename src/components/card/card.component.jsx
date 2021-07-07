@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import './card.styles.css'
 
-let answer = "ANSWER"
-
 class Card extends Component {
   constructor(props){
     super()
     this.state ={
-      props: props    
+      props: props,
+      isAnswer: false    // doesn't seem to be necessary to set here
     }
   }
 
   render(){
     return(
       <div className="card">
-        <p>{this.state.props.question}</p>
+        <p>{this.state.props.joke}</p>
         <button onClick={() => this.setState({isAnswer: !this.state.isAnswer})} className="cardBtn">
-          {answer}
+          {"ANSWER"}
         </button>
         <p
           style={{
@@ -33,21 +32,3 @@ class Card extends Component {
 }
 export default Card
 
-
-// export const Card = (props) => (
-//   <div className="card">
-//     <p>{props.question}</p>
-//     <button onClick={() => props.handleClick(props.id)} className="cardBtn">
-//       {answer}
-//     </button>
-//     <p
-//       style={{
-//         display: props.isAnswer ? "block" : "none",
-//         color: "#d4d7d8",
-//         fontStyle: "italic",
-//       }}
-//     >
-//       {props.answer}
-//     </p>
-//   </div>
-// )

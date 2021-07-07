@@ -6,7 +6,7 @@ export const CardList = (props) => (
   <div className="card-list">
     {console.log(props)}
     {props.results.map((result) => (
-      <Card key={result.id} id={result.id} question={result.setup} answer={result.punchline} handleClick={props.handleClick} isAnswer={props.isAnswer}/>
+      <Card key={result.id} joke={result.setup} answer={result.punchline} />
     ))}
   </div>
 )
